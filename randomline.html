@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Untitled Document</title>
+    <script src="https://d3js.org/d3.v3.min.js"></script>
+</head>
+<body>
+    <svg width="300" height="200">
+    </svg>
+
+   <script>
+       for(i=0; i<20; i++){
+  var linewidth = random(20,300);
+  d3.select("svg")
+    .append("rect")
+    .attr({
+    x: 10,
+    y: 10+12*i,
+    width: linewidth,
+    height: 10,
+    fill: "red"
+  });
+           
+  d3.select("svg")
+    .append("text")
+    .attr({
+    x: linewidth+15,
+    y: 20+12*i,
+    "font-size": 12
+  }).text(linewidth);
+}
+       
+function random(n,m){
+  return Math.ceil(Math.random()*(m-n)+n);
+}    
+ 
+    </script>
+
+</body>
+</html>
